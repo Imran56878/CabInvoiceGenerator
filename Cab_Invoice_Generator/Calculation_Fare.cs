@@ -15,7 +15,8 @@ namespace Cab_Invoice_Generator
         /// Instance varriable 
         /// </summary>
         int cost_per_km = 10;
-        int time_min;
+        int cost_per_km_premium = 15;
+        int time_min, min_total_fare;
         RideRepository ride_repo = new RideRepository();
         /// <summary>
         /// Its calculate the total fare of simple ride
@@ -24,15 +25,18 @@ namespace Cab_Invoice_Generator
         /// <param name="_distance_in_km"></param>
         /// <param name="_time_in_min"></param>
         /// <returns></returns>
-        public double Calculate_Fare(double _distance_in_km = 0, int _time_in_min = 0)
+        public double Calculate_Fare( string rides_type,double _distance_in_km , int _time_in_min )
         {
             double total_fare = 0;
-            total_fare = _distance_in_km * cost_per_km + _time_in_min * 1;
-            if (total_fare < 5)
+            if (rides_type =="Normal")
             {
-                total_fare = 5;
+                total_fare = _distance_in_km * cost_per_km + _time_in_min * 1;
+                this.min_total_fare = 5;
+                return Math.Max(total_fare, this.min_total_fare);
             }
-            return total_fare;
+            total_fare = _distance_in_km * cost_per_km_premium + _time_in_min * 2;
+            this.min_total_fare = 20;
+            return Math.Max( total_fare,this.min_total_fare);
         }
 
         /// <summary>
@@ -41,12 +45,12 @@ namespace Cab_Invoice_Generator
         /// </summary>
         /// <param name="rides"></param>
         /// <returns></returns>
-        public double Calculate_multi_ride_fare(List<Ride> rides)
+        public double Calculate_multi_ride_fare(string rides_type ,List<Ride> rides)
         {
             double total_fare = 0;
             foreach (Ride ride in rides)
             {
-                total_fare += this.Calculate_Fare(ride.distance_in_km, ride.time_in_min);
+                total_fare += this.Calculate_Fare(rides_type, ride.distance_in_km, ride.time_in_min);
 
             }
 

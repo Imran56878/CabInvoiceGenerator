@@ -30,7 +30,7 @@ namespace NUnit_Invoice_Test
         [Test]
         public void Single_Ride_Fare()
         {
-            var actual = calculate_fare.Calculate_Fare(5.0);
+            var actual = calculate_fare.Calculate_Fare("Normal", 5.0, 0);
             Assert.AreEqual(50, actual);
         }
 
@@ -43,7 +43,7 @@ namespace NUnit_Invoice_Test
         {
             //It creates the List for multi ride .
             List<Ride> ls = new List<Ride> { new Ride { distance_in_km = 12, time_in_min = 0 }, new Ride { distance_in_km = 0, time_in_min = 55 } };
-            var actual = calculate_fare.Calculate_multi_ride_fare(ls);
+            var actual = calculate_fare.Calculate_multi_ride_fare("Normal", ls);
             Assert.AreEqual(175, actual);
         }
 
@@ -70,7 +70,7 @@ namespace NUnit_Invoice_Test
         public void Get_Total_Fare()
         {
             List<Ride> ls = new List<Ride> { new Ride { distance_in_km = 190, time_in_min = 0 }, new Ride { distance_in_km = 0, time_in_min = 55 } };
-            Assert.AreEqual(1955.0, invoice_Summary.Total_fare(ls));
+            Assert.AreEqual(1955.0, invoice_Summary.Total_fare("Normal", ls));
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace NUnit_Invoice_Test
             list_rides.Add(new Ride { distance_in_km = 55, time_in_min = 85 });
             list_rides.Add(new Ride { distance_in_km = 0, time_in_min = 95 });
             list_rides.Add(new Ride { distance_in_km = 755, time_in_min = 0 });
-            Assert.AreEqual(2760.0, invoice_Summary.Average_fare_per_ride(list_rides));
+            Assert.AreEqual(2760.0, invoice_Summary.Average_fare_per_ride("Normal", list_rides));
         }
 
         /// <summary>

@@ -21,9 +21,9 @@ namespace Cab_Invoice_Generator
         /// </summary>
         /// <param name="rides"></param>
         /// <returns></returns>
-        public double Total_fare(List<Ride> rides)
+        public double Total_fare(string rides_type ,List<Ride> rides )
         {
-            return calc_fare.Calculate_multi_ride_fare(rides);
+            return calc_fare.Calculate_multi_ride_fare(rides_type,rides);
         }
         /// <summary>
         /// It return the total 
@@ -31,9 +31,9 @@ namespace Cab_Invoice_Generator
         /// </summary>
         /// <param name="rides"></param>
         /// <returns></returns>
-        public double Average_fare_per_ride(List<Ride> rides)
+        public double Average_fare_per_ride(string rides_type ,List<Ride> rides)
         {
-            return (calc_fare.Calculate_multi_ride_fare(rides)) / (rides.Count);
+            return (calc_fare.Calculate_multi_ride_fare(rides_type,rides)) / (rides.Count);
         }
     }
 }
