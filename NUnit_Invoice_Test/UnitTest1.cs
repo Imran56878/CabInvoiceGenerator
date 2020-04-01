@@ -16,6 +16,7 @@ namespace NUnit_Invoice_Test
         /// </summary>
         Calculation_Fare calculate_fare = new Calculation_Fare();
         Invoice_Summary invoice_Summary = new Invoice_Summary();
+        RideRepository ride_repository = new RideRepository();
 
         [SetUp]
         public void Setup()
@@ -84,6 +85,21 @@ namespace NUnit_Invoice_Test
             list_rides.Add(new Ride { distance_in_km = 0, time_in_min = 95 });
             list_rides.Add(new Ride { distance_in_km = 755, time_in_min = 0 });
             Assert.AreEqual(2760.0, invoice_Summary.Average_fare_per_ride(list_rides));
+        }
+
+        /// <summary>
+        /// It return total rides of any user
+        /// by it's id .
+        /// </summary>
+        [Test]
+        public void Get_User_Rides_Count_by_User_Id()
+        {
+            List<Ride> list_rides = new List<Ride>();
+            list_rides.Add(new Ride { distance_in_km = 55, time_in_min = 85 });
+            list_rides.Add(new Ride { distance_in_km = 0, time_in_min = 95 });
+            list_rides.Add(new Ride { distance_in_km = 755, time_in_min = 0 });
+            ride_repository.Add_Rides("12345", list_rides);
+            Assert.AreEqual(3, ride_repository.Get_User_Rides("12345"));
         }
     }
 }

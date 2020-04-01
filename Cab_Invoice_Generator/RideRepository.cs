@@ -18,7 +18,7 @@ namespace Cab_Invoice_Generator
         /// </summary>
         /// <param name="user_id"></param>
         /// <param name="rides"></param>
-        public void AddRides(string user_id, List<Ride> rides)
+        public void Add_Rides(string user_id, List<Ride> rides)
         {
             user_rides.Add(user_id, rides);
         }

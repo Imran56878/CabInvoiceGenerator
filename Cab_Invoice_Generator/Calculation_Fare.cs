@@ -61,7 +61,7 @@ namespace Cab_Invoice_Generator
         /// <param name="rides"></param>
         public void Add_Rides(string _user_id, List<Ride> rides)
         {
-            ride_repo.AddRides(_user_id, rides);
+            ride_repo.Add_Rides(_user_id, rides);
         }
         /// <summary>
         /// It return the total count of any 
