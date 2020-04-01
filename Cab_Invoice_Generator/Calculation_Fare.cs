@@ -16,6 +16,7 @@ namespace Cab_Invoice_Generator
         /// </summary>
         int cost_per_km = 10;
         int time_min;
+        RideRepository ride_repo = new RideRepository();
         /// <summary>
         /// Its calculate the total fare of simple ride
         /// and return the fare
@@ -50,6 +51,28 @@ namespace Cab_Invoice_Generator
             }
 
             return total_fare;
+        }
+
+        /// <summary>
+        /// It add the specific user ride 
+        /// with theire rides
+        /// </summary>
+        /// <param name="_user_id"></param>
+        /// <param name="rides"></param>
+        public void Add_Rides(string _user_id, List<Ride> rides)
+        {
+            ride_repo.AddRides(_user_id, rides);
+        }
+        /// <summary>
+        /// It return the total count of any 
+        /// added user rides .
+        /// </summary>
+        /// <param name="_user_id"></param>
+        /// <returns></returns>
+        public int Get_Rides_Count(string _user_id)
+        {
+            return ride_repo.Get_User_Rides(_user_id);
+
         }
     }
 }
