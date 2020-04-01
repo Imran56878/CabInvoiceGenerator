@@ -101,5 +101,16 @@ namespace NUnit_Invoice_Test
             ride_repository.Add_Rides("12345", list_rides);
             Assert.AreEqual(3, ride_repository.Get_User_Rides("12345"));
         }
+
+        /// <summary>
+        /// It calculate the fare 
+        /// with premium
+        /// </summary>
+        [Test]
+        public void Premium_fare()
+        {
+            var actual = calculate_fare.Calculate_Fare("Premium", 50, 0);
+            Assert.AreEqual(750, actual);
+        }
     }
 }
