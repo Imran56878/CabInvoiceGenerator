@@ -1,18 +1,20 @@
 using NUnit.Framework;
-
+using QuantityMeasurement;
 namespace NUnitQuantityMeasurementTest
 {
     public class Tests
     {
+        //Feet feet = new Feet(0);
         [SetUp]
         public void Setup()
         {
         }
 
         [Test]
-        public void Test1()
+        public void FeetValueTest()
         {
-            Assert.Pass();
+            Feet feet = new Feet(0);
+            Assert.AreEqual(true,feet.ConvertedFeetValue( feet));
         }
     }
 }
