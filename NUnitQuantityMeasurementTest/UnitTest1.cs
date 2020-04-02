@@ -37,6 +37,13 @@ namespace NUnitQuantityMeasurementTest
             Feet feet = new Feet(2);
             Assert.IsTrue(feet.ConvertedFeetValue(feet));
         }
+        [Test]
+        public void Feet_To_Inch_Converter()
+        {
+            FeetToInche feet_to_inch = new FeetToInche();
+            var a= feet_to_inch.Feet_to_inch_Conversion(5);
+            Assert.AreEqual(60,a);
+        }
 
     }
 }
