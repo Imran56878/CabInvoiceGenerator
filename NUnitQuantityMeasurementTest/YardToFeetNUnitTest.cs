@@ -31,7 +31,17 @@ namespace NUnitQuantityMeasurementTest
             YardToFeet yardToFeet = new YardToFeet();
             Assert.AreEqual(yardToFeet.Converte_Yard_To_Feet(yardValue),feetValue.Get_Feet_Value());
         }
-
+        /// <summary>
+        /// This method is checking that 1ft is not equal to 1 yard
+        /// </summary>
+        [Test]
+        public void Checking_ft_And_Yard_Unequality()
+        {
+            var feetValue = new Feet(1);
+            var yardValue = new Yard(1);
+            YardToFeet yardToFeet = new YardToFeet();
+            Assert.IsFalse(yardToFeet.Checking_Yard_And_Feet_Value_Equality(feetValue, yardValue));
+        }
 
     }
 }
