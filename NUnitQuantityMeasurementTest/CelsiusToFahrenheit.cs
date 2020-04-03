@@ -45,12 +45,12 @@ namespace NUnitQuantityMeasurementTest
         /// This method is checking the value of Celsius and fahranheit
         /// </summary>
         [Test]
-        public void Checking_Equality_Of_Celsius_And_Fahranheit_Value()
+        public void Checking_Equality_Of_Celsius_And_Fahranheit_Values_By_getting_Value()
         {
             Celsius celsius = new Celsius(1);
             Fahrenheit fahranheit = new Fahrenheit(50);
             CelsiusToFahrenheit celsiusToFahrenheit = new CelsiusToFahrenheit();
-            Assert.IsFalse(celsiusToFahrenheit.Celsius_to_fahrenheit_conversion(celsius).Equals(celsius.Get_Celsius_Value()) );
+            Assert.IsTrue(celsiusToFahrenheit.Celsius_to_fahrenheit_conversion(celsius).Equals(celsius.Get_Celsius_Value()) );
         }
     }
 }
