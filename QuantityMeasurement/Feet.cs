@@ -23,5 +23,9 @@ namespace QuantityMeasurement
                 return true;
             return false;
         }
+        public int Get_Feet_Value()
+        {
+            return this.feet;
+        }
     }
 }

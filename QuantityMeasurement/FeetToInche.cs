@@ -16,5 +16,13 @@ namespace QuantityMeasurement
 
             return a;
         }
+        public bool Feet_to_Inche_Equality( Feet _feet , Inches  inch)
+        {
+            var a = _feet.Get_Feet_Value() * 12;
+            var b = inch.getInches();
+            if (a== b)
+                return true;
+            return false;
+        }
     }
 }
