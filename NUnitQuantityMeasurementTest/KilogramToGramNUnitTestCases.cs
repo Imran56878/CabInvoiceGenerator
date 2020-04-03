@@ -42,6 +42,18 @@ namespace NUnitQuantityMeasurementTest
             KilogramToGram kilogram_to_gram = new KilogramToGram();
             Assert.IsTrue(kilogram_to_gram.Checking_Equality_Kilogram_To_Gram(kilogram, gram));
         }
+        /// <summary>
+        /// Checking the equality of 1 kilogram and 2000 gram
+        /// </summary>
+        [Test]
+        public void Checking_Equality_Kilogram_And_Diffrent_Equal_Value_Of_Gram()
+        {
+            Kilogram kilogram = new Kilogram(1);
+            Gram gram = new Gram(2000);
+            KilogramToGram kilogramToGram = new KilogramToGram();
+            Assert.IsFalse(kilogramToGram.KiloGram_to_gram_Conversion(kilogram).Equals(gram.Get_Gram_Value()) );
+        }
+
 
 
     }
