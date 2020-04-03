@@ -2,7 +2,7 @@
 using QuantityMeasurement;
 namespace NUnitQuantityMeasurementTest
 {
-   public  class YardToFeetNUnitTest
+    public class YardToFeetNUnitTest
     {
         [SetUp]
         public void Setup()
@@ -29,7 +29,7 @@ namespace NUnitQuantityMeasurementTest
             var feetValue = new Feet(3);
             var yardValue = new Yard(1);
             YardToFeet yardToFeet = new YardToFeet();
-            Assert.AreEqual(yardToFeet.Converte_Yard_To_Feet(yardValue),feetValue.Get_Feet_Value());
+            Assert.AreEqual(yardToFeet.Converte_Yard_To_Feet(yardValue), feetValue.Get_Feet_Value());
         }
         /// <summary>
         /// This method is checking that 1ft is not equal to 1 yard
