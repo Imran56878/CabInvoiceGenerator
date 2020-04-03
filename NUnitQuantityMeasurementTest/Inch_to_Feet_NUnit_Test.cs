@@ -60,6 +60,19 @@ namespace NUnitQuantityMeasurementTest
             Inches inch1 = new Inches(2);
             Assert.AreNotEqual(inch.getInches(), inch1.getInches());
         }
+        /// <summary>
+        /// Feet to inch conversion check
+        /// </summary>
+        [Test]
+        public void Inch_To_Feet_Conversion()
+        {
+            Feet feet = new Feet(2);
+            Inches inches = new Inches(24);
+            InchesToFeetConversion inch_to_feet = new InchesToFeetConversion();
+            var a= inch_to_feet.Inch_to_Feet_Conversion(inches );
+            Assert.AreEqual(feet.Get_Feet_Value(),a);
+
+        }
 
     }
 }
