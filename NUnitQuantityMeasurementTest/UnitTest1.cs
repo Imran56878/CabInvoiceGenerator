@@ -73,6 +73,18 @@ namespace NUnitQuantityMeasurementTest
             FeetToInche feet_to_inch = new FeetToInche();
             Assert.IsTrue(feet_to_inch.Feet_to_Inche_Equality(feetValue, inchValue));
         }
+        /// <summary>
+        /// This method for checking Feet and Inch value 
+        /// </summary>
+        [Test]
+        public void Checking_Feet_And_Inch_Value_Not_Equality()
+        {
+            var feetValue = new Feet(2);
+            var inchValue = new Inches(12);
+            FeetToInche feet_to_inch = new FeetToInche();
+            Assert.IsFalse(feet_to_inch.Feet_to_Inche_Equality(feetValue, inchValue));
+        }
+
 
 
     }
