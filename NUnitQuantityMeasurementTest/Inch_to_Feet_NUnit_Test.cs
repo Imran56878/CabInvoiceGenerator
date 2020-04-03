@@ -22,12 +22,15 @@ namespace NUnitQuantityMeasurementTest
             var feetValue = inchToFeet.Inch_to_Feet_Conversion (inch);
            Assert.AreEqual(1,feetValue);
         }
-        /*[Test]
-        public void Test()
+        /// <summary>
+        /// Checking Null Value and it return false if value is null
+        /// </summary>
+        [Test]
+        public void Checking_NullRefrence_Value()
         {
-            Feet feet = new Feet(1);
-            Assert.IsTrue(inchToFeet.Inche_to_Feet_Equality(feet, inch));
-        }*/
+            Inches inches = new Inches(12);
+            Assert.IsFalse(inches.Equals(null));
+        }
 
     }
 }
