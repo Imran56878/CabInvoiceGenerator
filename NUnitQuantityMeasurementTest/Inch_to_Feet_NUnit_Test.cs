@@ -50,6 +50,16 @@ namespace NUnitQuantityMeasurementTest
             Inches inch1 = new Inches(0);
             Assert.AreEqual(inch.getInches(),inch1.getInches());
         }
+        /// <summary>
+        /// This method for checking 1 inch and 2 inch is not equal
+        /// </summary>
+        [Test]
+        public void Checking_Diffrent_Feet_Value()
+        {
+            Inches inch = new Inches(1);
+            Inches inch1 = new Inches(2);
+            Assert.AreNotEqual(inch.getInches(), inch1.getInches());
+        }
 
     }
 }
