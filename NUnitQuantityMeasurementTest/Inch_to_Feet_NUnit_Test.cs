@@ -40,6 +40,16 @@ namespace NUnitQuantityMeasurementTest
             Inches inch = new Inches(2);
             Assert.IsTrue(inch.ConvertedInchValue(inch));
         }
+        /// <summary>
+        /// Method for Checking the value of  0 inch  and 0 inch
+        /// </summary>
+        [Test]
+        public void Checking_Values_Equality()
+        {
+            Inches inch = new Inches(0);
+            Inches inch1 = new Inches(0);
+            Assert.AreEqual(inch.getInches(),inch1.getInches());
+        }
 
     }
 }
