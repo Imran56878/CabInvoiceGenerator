@@ -44,6 +44,17 @@ namespace NUnitQuantityMeasurementTest
             var a= feet_to_inch.Feet_to_inch_Conversion(5);
             Assert.AreEqual(60,a);
         }
+        /// <summary>
+        /// This method for checking 1ft and 2ft is not equal
+        /// </summary>
+        [Test]
+        public void Checking_Diffrent_Feet_Value()
+        {
+            FeetToInche feet_to_inch = new FeetToInche();
+            var val1 = new Feet(1);
+            var val2 = new Feet(2);
+            Assert.AreEqual(feet_to_inch.Feet_to_inch_Conversion(1), feet_to_inch.Feet_to_inch_Conversion(2));
+        }
 
     }
 }
