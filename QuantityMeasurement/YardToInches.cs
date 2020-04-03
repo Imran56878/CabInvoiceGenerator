@@ -24,7 +24,7 @@ namespace QuantityMeasurement
         /// <param name="feetValue"></param>
         /// <param name="yardValue"></param>
         /// <returns></returns>
-        public bool Checking_Yard_And_Feet_Value_Equality(Inches inch, Yard yardValue)
+        public bool Checking_Yard_And_Inch_Value_Equality(Inches inch, Yard yardValue)
         {
             var value = yardValue.GetYard_value() * 3*12;
             if (inch.getInches() == value)

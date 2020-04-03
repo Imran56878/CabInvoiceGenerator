@@ -6,12 +6,6 @@ namespace QuantityMeasurement
 {
     public class YardToFeet
     {
-        int yard;
-        public YardToFeet(int _yard)
-        {
-
-            this.yard = _yard;
-        }
         /// <summary>
         /// it convert the yard to feet 
         /// </summary>
