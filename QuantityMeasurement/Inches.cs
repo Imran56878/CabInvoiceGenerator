@@ -11,6 +11,12 @@ namespace QuantityMeasurement
         {
             this.inch = _inch;
         }
+        public bool ConvertedInchValue(Inches _inch)
+        {
+            if (this.inch .Equals(_inch.inch))
+                return true;
+            return false;
+        }
         public int getInches()
         {
             return inch;
