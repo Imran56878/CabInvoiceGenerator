@@ -1,0 +1,45 @@
+.main-div{
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    background-color:none;
+}
+.Login-div{
+    text-align: center;
+    color: indigo;
+  
+}
+.Loginhr{
+    background-color: blueviolet;
+}
+.submit{
+    height: auto;
+    width: auto;
+    background-color: blue;
+    color: rgb(155, 28, 35);
+}
+.input-email-div{
+margin-bottom: 5px;
+}
+.main-test-div{
+    padding: 5px;
+    margin-bottom: 5px;
+}
+.sentence2-div{
+    text-align: left;
+    color: rgb(146, 145, 153);
+}
+.empTable{
+    text-align: center;
+    background-color: darkolivegreen;
+    color:gold;
+}
+.head-div{
+    text-align: center;
+}
+.main-table-div{
+    height: 100%;
+    width: 100;
+    background-color: indigo;
+    text-align: center;
+}
